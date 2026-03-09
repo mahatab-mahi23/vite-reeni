@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF494A; 
+  --color-heading: #141414;
+  --color-para: #5D6570;
+
+  --font-primary: "Rajdhani", sans-serif;
+  --font-secondary: "Rubik", sans-serif;
+  --font-inter : "Inter", sans-serif;
+
+  --shadow-nav: 0 7px 18px 0 rgba(24, 16, 16, 0.05);
+  --shadow-box: 0 4px 4px 2px rgba(0, 0, 0, 0.25);
+  --shadow-red-line: 4px 4px 0px 0px #FF494A;
+
+  --background-image-glow-red: radial-gradient(
+    circle, 
+    #ff494a 0%, 
+    rgba(255, 73, 74, 0) 50%, 
+    rgba(255, 73, 74, 0) 100%
+  );
+
+  --spacing-container-max: 1275px; 
+}
+
+@layer components {
+  .nav-bar {
+    
+    @apply font-primary text-heading  text-[16px] leading-7 font-bold;
+  }
+  .btn-primary {
+    @apply bg-primary text-white font-primary font-bold px-10 py-4 rounded-full flex items-center gap-2 transition-all hover:shadow-xl active:scale-95;
+  }
+  .text-outline-simple {
+    -webkit-text-stroke: 1.5px rgba(20, 20, 20, 0.1);
+  }
+}
+
+@layer utilities {
+  .container {
+  
+    @apply md:max-w-[1275px] max-w-[390px] mx-auto;
+  }
+}
+
+.middle-right-btn {
+  position: fixed ;
+  right: 0;          
+  top: 50%;           
+  transform: translateY(-50%); 
+  
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar-popup {
+  position: fixed;
+  right: 20px;        
+  top: 70%;
+  transform: translateY(-50%);
+  
+  width: 320px;
+  background: white;
+  border: 2px solid #00a2ff; 
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+@media (max-width: 640px) {
+  .sidebar-popup {
+    top: 50% !important; 
+    right: 5% !important;
+    left: 5% !important;
+    width: 90% !important;
+    padding: 15px !important;
+  }
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
